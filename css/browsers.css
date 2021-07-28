@@ -1,0 +1,8 @@
+
+/* Internet Explorer 10+, Microsoft Edge Browser */
+_:-ms-lang(x), .dt-header-default .dt-sc-header-icons-list-item div[class*='menu-icon'] > a, 
+.dt-header-default .dt-sc-header-icons-list-item div[class*='menu-icon'] > a > span, 
+.dt-header-default .dt-sc-header-icons-list-item div[class*='menu-icon'] > a > span > i, 
+.dt-header-default .dt-sc-header-icons-list-item .dt-sc-shop-menu-icon .dt-sc-shop-menu-cart-inner > *, 
+.dt-header-default .dt-sc-header-icons-list-item .dt-sc-shop-menu-icon .dt-sc-shop-menu-cart-inner, 
+.dt-header-default .dt-sc-header-icons-list-item .dt-sc-shop-menu-icon .dt-sc-shop-menu-cart-inner .dt-sc-shop-menu-cart-icon { height: auto; }   
