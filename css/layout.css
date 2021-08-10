@@ -3204,7 +3204,7 @@ div.pp_default .pp_content .pp_description {
     flex-wrap: wrap;   
 }
 
-.dt-sc-header-icons-list-item { padding: 5px; position: relative; }
+.dt-sc-header-icons-list-item { padding: 15px; position: relative; }
 .dt-sc-header-icons-list-item::after {
     content: "";
     height: auto;
