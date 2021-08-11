@@ -3673,7 +3673,7 @@ _:default:not(:root:root),
         position: fixed;
         left: 0;
         right: 0;
-        top: 0;
+       
     }
 
     #header .dt-header-tpl .sticky-header.dt-header-top {
@@ -4281,3 +4281,29 @@ _:default:not(:root:root),
         float: none;
     }
 }
+.web{
+
+    display: none;
+  }
+  
+  
+    @media screen and (max-width: 600px) {
+      .web{
+        display: block;
+      }
+    }
+  
+    
+    /* media for articles */
+  
+  .mobile{
+  
+    display: block;
+  }
+  
+  
+    @media screen and (max-width: 600px) {
+      .mobile{
+        display: none;
+      }
+    }
