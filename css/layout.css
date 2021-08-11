@@ -4281,17 +4281,28 @@ _:default:not(:root:root),
         float: none;
     }
 }
-.web{
+#web{
 
     display: none;
   }
   
   
     @media screen and (max-width: 600px) {
-      .web{
+      #web{
         display: block;
       }
     }
+
+    .color{
+display: none;
+      }
+      
+      
+        @media screen and (max-width: 600px) {
+          .color{
+            background-color: #961526; 
+          }
+        }
   
     
     /* media for articles */
