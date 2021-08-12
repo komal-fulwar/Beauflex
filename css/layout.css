@@ -4281,14 +4281,14 @@ _:default:not(:root:root),
         float: none;
     }
 }
-#web{
+.web{
 
     display: none;
   }
   
   
-    @media screen and (max-width: 600px) {
-      #web{
+    @media screen and (max-width: 1290px) {
+      .web{
         display: block;
       }
     }
