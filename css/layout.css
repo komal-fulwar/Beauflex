@@ -4318,3 +4318,33 @@ display: none;
         display: none;
       }
     }
+
+    #wheel-of-fortune {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #wheel {
+        transform-origin: 50% 50%;
+    }
+    
+
+    #wheel.is-turning {
+        animation-name: turning-wheel;
+        animation-duration: 4s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+    }
+    
+    
+     
+  
+    
+    /*
+    @keyframes turning-wheel {
+        to {
+            transform: rotate(10turn);
+        }
+    }
+    */
