@@ -27,10 +27,388 @@
 		!function (e, a, t) { var n, r, o, i = a.createElement("canvas"), p = i.getContext && i.getContext("2d"); function s(e, t) { var a = String.fromCharCode; p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0); e = i.toDataURL(); return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL() } function c(e) { var t = a.createElement("script"); t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t) } for (o = Array("flag", "emoji"), t.supports = { everything: !0, everythingExceptFlag: !0 }, r = 0; r < o.length; r++)t.supports[o[r]] = function (e) { if (!p || !p.fillText) return !1; switch (p.textBaseline = "top", p.font = "600 32px Arial", e) { case "flag": return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]); case "emoji": return !s([55357, 56424, 8205, 55356, 57212], [55357, 56424, 8203, 55356, 57212]) }return !1 }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]); t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () { t.DOMReady = !0 }, t.supports.everything || (n = function () { t.readyCallback() }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () { "complete" === a.readyState && t.readyCallback() })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n.wpemoji))) }(window, document, window._wpemojiSettings);
 	</script>
 	<style>
+		.mobile-underlayer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: block;
+  top:0;
+  left:0;
+  background: rgba(0, 0, 0, 0.8);
+  font-size: 100%;
+  color: #000;
+  font-family: "sofia-pro", 'Lato', sans-serif;
+  font-size: 12px;
+  z-index: 9999;
+} 
+		 .popup-modal {
+            background-color: #fff;
+            border-radius: 1em;
+            padding: 2.5em;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            -moz-flex-direction: column;
+            -ms-flex-direction: column;
+            -o-flex-direction: column;
+            flex-direction: column;
+            justify-content: center;
+            -ms-align-items: center;
+            align-items: center;
+            position: relative;
+            text-align: center;
+            color: #1A1D4A;
+            max-width: 350px;
+        }
+		.btn--close {
+            background-color: #fff;
+            position: absolute;
+            top: 1em;
+            right: 1em;
+            cursor: pointer;
+            border: #FCF1F5 1px solid;
+            border-radius: 50%;
+            padding: 0.4em 0.8em;
+        }
+
+        .fa-times {
+            color: gray;
+        }
+
+        .img__container {
+            padding: 0.7em;
+            border-radius: 100%;
+            margin-bottom: 1.5em;
+        }
+
+        .img--phone {
+            background-color: #FCF1F5;
+            border: 4px solid #F3F3FB;
+        }
+
+        .img--fire {
+            background-color: #FFF;
+            border: 4px solid #FCF1F5;
+        }
+
+        .pop__img {
+            width: 60px;
+        }
+
+        .pop__title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.4em;
+          line-height: 1.2;
+        }
+
+        .pop__text {
+            margin-bottom: 3em;
+        }
+
+        button:focus,
+        .btn:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #FFFFFF,
+                0 0 0 4px #1A1D4A;
+
+        }
+
+        .btn__container {
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            -webkit-flex-direction: row;
+            -moz-flex-direction: row;
+            -ms-flex-direction: row;
+            -o-flex-direction: row;
+            flex-direction: row;
+            justify-content: space-between;
+
+        }
+
+        .btns {
+            font-size: 0.8rem;
+            border-radius: 2em;
+            text-decoration: none;
+            display: block;
+            padding: 0.7em 2em;
+
+        }
+
+        .btns+.btns {
+            margin-left: 2em;
+        }
+
+        .btn--light {
+            color: #BF0E0E;
+            font-weight: 400;
+            border: 1px solid #BF0E0E;
+
+        }
+
+        .btn--light:hover {
+            color: #FFF;
+            background-color: #BF0E0E;
+
+        }
+
+        .btn--accent {
+            color: #FFF;
+            background-color: #BF0E0E;
+        }
+
+        .btn--accent:hover {
+            filter: brightness(115%);
+
+        }
+
+
+        .pop__form {
+            width: 100%;
+            margin-bottom: 1em;
+        }
+
+        .form__email {
+            margin-bottom: 0.4em;
+            border: 1px solid gray;
+            border-radius: 1em;
+            width: 100%;
+            padding: 0.5em 1em;
+            outline: none;
+
+        }
+
+        .btn--form {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+
+	</style>
+	<style>
 		.site-footer .social-media-links img {
 		display: block;
    
 		}
+		
+	</style>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+
+/* transparent fullscreen background */
+.mlctr-underlayer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: block;
+  top:0;
+  left:0;
+  background: rgba(0, 0, 0, 0.8);
+  font-size: 100%;
+  color: #000;
+  font-family: "sofia-pro", 'Lato', sans-serif;
+  font-size: 12px;
+  z-index: 9999;
+} 
+
+/* master popup div container */
+.my-popup-container {
+  position: fixed;
+  left: 50%;
+  margin-left: -460px;
+  top: 50%;
+  margin-top: -210px;
+  width: 60%;
+  min-height: 390px;
+  background: url(https://cli.mlctr.com/cli001/zoot/bkg.jpg) center top no-repeat;
+  background-size: 100% auto;
+  background-color: #ffffff;
+  padding: 30px 30px 0 440px;
+  text-align: center;
+   -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  border: 1px solid #c0c0c0;
+  box-shadow: 0px 0px 16px RGBA(234,234,234,0.5);
+  -moz-box-shadow: 0px 0px 16px RGBA(234,234,234,0.5);
+  -webkit-box-shadow: 0px 0px 16px RGBA(234,234,234,0.5);
+  box-sizing: border-box;
+}
+.mlctr-close {
+  display: block;
+  position: absolute;
+	width: 40px;
+	height: 40px;
+	top: -20px;
+	right: -20px;
+  background: url(https://cli.mlctr.com/cli001/zoot/close.png) center center no-repeat;
+  background-size: 36px 36px;
+  opacity: 0.8;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.5s, background-size 0.5s, opacity ease-in-out .25s;
+  -moz-transition: -moz-transform 0.5s, background-size 0.5s, opacity ease-in-out .25s;
+  -o-transition: -o-transform 0.5s, background-size 0.5s, opacity ease-in-out .25s;
+  transition: transform 0.5s, background-size 0.5s, opacity ease-in-out .25s;
+}
+.mlctr-close:hover {
+  opacity: 1;
+  background-size: 40px 40px;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.my-popup-container h1 {
+  width: 100%;
+  font-size: 42px;
+  line-height: 52px;
+  color: #000;
+  font-weight: 700;
+  padding: 6px 0;
+  margin: 0;
+}
+.my-popup-container h2 {
+  width: 100%;
+  font-size: 17px;
+  line-height: 25px;
+  font-weight: 700;
+  padding: 10px 0;
+  margin: 0;
+}
+.my-popup-container h3 {
+  width: 100%;
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: 700;
+  text-align: left;
+  padding: 50px 20px 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.my-popup-container h3 span{
+  color: #c11e1e;
+}
+.mlctr-message-error {
+  width: 100%;
+  height: 18px;
+  font-size: 12px;
+  padding: 0 30px;
+  margin: 5px 0;
+  font-weight: bold;
+  text-align: left;
+  color: #c11e1e;
+  box-sizing: border-box;
+}
+.mlctr-verification-alert {
+  display: none;
+}
+.mlctr-verification-alert.display {
+  display: none;
+}
+
+.my-popup-container input[type="text"] {
+  width: 255px;
+  height: 60px;
+  font-size: 16px;
+  padding: 5px 25px 5px 20px;
+  background-color: #ffffff;
+  border: 1px solid #ababab;
+  color: #313131;
+  margin: 0px;
+  font-family: "sofia-pro", 'Lato', sans-serif;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  box-sizing: border-box;
+  -webkit-transition: border ease-in-out .15s;
+  -moz-transition: border ease-in-out .15s;
+  transition: border ease-in-out .15s;
+  box-sizing: border-box;
+}
+.my-popup-container input[type="text"]:focus {
+	border-color: #e51b24;
+  outline: 0;
+}
+.my-popup-container input[type="submit"] {
+  width: 160px;
+  height: 60px;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0;
+	margin: 0 0 0 -6px;
+  border: 0px;
+  background-color: #35c813;
+  font-family: "sofia-pro", 'Lato', sans-serif;
+  color: #ffffff;
+   -webkit-border-radius: 0 6px 6px 0;
+  -moz-border-radius: 0 6px 6px 0;
+  border-radius: 0 6px 6px 0;
+  -webkit-transition: font-size ease-in-out .05s;
+  -moz-transition: font-size ease-in-out .05s;
+  transition: font-size ease-in-out .05s;
+  cursor: pointer;
+  box-shadow: inset 0px 0px 2px RGBA(255,255,255,0.25);
+  box-sizing: border-box;
+  outline: 0;
+}
+.my-popup-container input[type="submit"]:hover {
+  font-size: 16.5px;
+}
+.my-popup-container input[type="submit"]:active {
+  font-size: 15.5px;
+	-webkit-box-shadow: inset 1px 2px 5px rgba(0,0,0,0.30);
+	-moz-box-shadow: inset 1px 2px 5px rgba(0,0,0,0.30);
+	box-shadow: inset 1px 2px 5px rgba(0,0,0,0.30);
+  outline: 0;
+}
+.mlctr-privacy {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  text-align: left;
+  color: #7b7b7b;
+  padding: 20px 20px 30px;
+  margin: 0;
+  box-sizing: border-box;
+}
+.my-popup-container input[type="button"] {
+  width: 260px;
+  height: 60px;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0;
+  margin: 40px 0;
+  border: 0px;
+  background-color: #35c813;
+  color: #ffffff;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -webkit-transition: font-size ease-in-out .05s;
+  -moz-transition: font-size ease-in-out .05s;
+  transition: font-size ease-in-out .05s;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: 0;
+}
+.my-popup-container input[type="button"]:hover {
+  font-size: 16.5px;
+}
+.my-popup-container input[type="button"]:active {
+  font-size: 15.5px;
+	-webkit-box-shadow: inset 1px 2px 5px rgba(0,0,0,0.30);
+	-moz-box-shadow: inset 1px 2px 5px rgba(0,0,0,0.30);
+	box-shadow: inset 1px 2px 5px rgba(0,0,0,0.30);
+  outline: 0;
+}
 	</style>
 	<style type="text/css">
 		img.wp-smiley,
@@ -1642,7 +2020,7 @@
 		.woocommerce .hidden-title-form a.hide-title-form,
 		.woocommerce .wishlist_manage_table a.create-new-wishlist,
 		.woocommerce a.added_to_cart {
-			background-color: #ee2d7a;
+			background-color: #bf0e0e;
 		}
 
 		.mz-title .mz-title-content h2,
@@ -1653,13 +2031,13 @@
 		.mz-blog .ico-format,
 		.side-navigation-content .dt-sc-wings-heading:after,
 		.animated-twin-lines:after {
-			background-color: #ee2d7a;
+			background-color: #bf0e0e;
 		}
 
 		.dt-sc-tabs-vertical-frame-container.type3 ul.dt-sc-tabs-vertical-frame>li>a:hover,
 		.dt-sc-tabs-vertical-frame-container.type3 ul.dt-sc-tabs-vertical-frame>li>a.current,
 		.dt-sc-tabs-vertical-frame-container.type4 ul.dt-sc-tabs-vertical-frame>li>a.current:before {
-			background-color: #ee2d7a;
+			background-color: #bf0e0e;
 		}
 
 		.live-chat a,
@@ -5679,7 +6057,28 @@
 												</div>
 											</div>
 										</section>
-
+										<section class="wrappers mobile-underlayer" style="display: flex;
+										flex-direction: row;
+										justify-content: center;
+										align-items: center;
+							
+										font-size: 1rem;
+										font-weight: 300;
+										min-height: 100vh;
+										">
+        
+											<div class="popup-modal">
+												<button class="btn--close"><i class="fas fa-times"></i></button>
+												<div class="img__container img--fire"><img src="https://www.flaticon.com/svg/static/icons/svg/740/740842.svg" alt="Fire" class="pop__img "></div>
+									
+												<p class="pop__title">Stay up to date with our hot news!</p>
+												<p class="pop__text">Get weekly updates on what’s happening in the tech industry. </p>
+												<form action="#" class="pop__form">
+													<input type="email" name="email" id="form--email" placeholder="Enter your email address" class="form__email">
+													<button type="submit" class="btns btn--accent btn--form">Suscribe</button>
+												</form>
+											</div>
+										</section>
 										<section
 											class="elementor-section elementor-top-section elementor-element elementor-element-2aa8003 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
 											data-id="2aa8003" data-element_type="section">
@@ -6535,7 +6934,7 @@
 							<div id="comments" class="comments-area"></div><!-- .comments-area -->
 						</section>
 					</section><!-- Primary End -->
-<div class="container">
+<!-- <div class="container">
 	<svg id="wheel-of-fortune" width="100" height="100" viewBox="0 0 100 100">
 		<defs>
 			<clipPath id="clip">
@@ -6566,13 +6965,51 @@
 			<path fill="#ffffff" d="M45,50 L50,40 L55,50Z"></path>
 		</g>
 	</svg>
-</div>
+</div> -->
 					
 				</div>
 				<!-- ** Container End ** -->
 
 			</div><!-- **Main - End ** -->
-
+<!-- transparent fullscreen background -->
+<div class="mlctr-underlayer mobile" id="hide">
+ 
+	<!-- master popup div container -->
+	<div class="my-popup-container mlctr-popup">
+   <div  ondblclick="hideFunction()">
+	  <span class="mlctr-close" ></span>
+	</div>
+	  <!-- following onsubmit event is required -->
+	  <form onsubmit="return mailocator.action.do('subscribe')" id="MailocatorForm">
+		 <!-- following div will be overwritten with success message -->
+		 <div class="mlctr-message-success" style="display:block">
+		   <h1>POPUST 6 €</h1>
+		   <h2>Velja za naročila nad 60 €<br />Popust vam bomo takoj poslali na vneseni e-mail :-)</h2>
+		   <h3>Vpišite svoj e-mail <span>*</span></h3>
+		   <div class="mlctr-message-error"><!-- all customized error messages will be placed here -->
+		   <div class="mlctr-verification-alert">Vyslovte prosím souhlas se zasíláním obchodních sdělení.</div>
+		   </div>
+		   <label></label>
+		   <!-- input with attribute name="email" is required -->
+		   <input type="text" name="email" value="" placeholder="@" />
+		   <input type="submit" value="ŽELIM POPUST" />
+		   <div class="mlctr-privacy">
+			 S&nbsp;pošiljanjem obrazca se strinjate z&nbsp;obdelavo osebnih podatkov v&nbsp;namene pošiljanja poslovnih sporočil (VIP popusti, novice itd.)</a>
+		   </div>
+		 </div>
+		 <!-- following div will replace the "mlctr-message-success" div -->
+		 <div class="mlctr-message-thanks" style="display:none">
+		 <h1 style="padding:15px 0;">KUPON ZA POPUST<br />ŽE PRIHAJA K VAM</h1>
+		 <h2>Hvala za registracijo.<br />Pravkar smo vam poslali popust na naveden e-mail.</h2>
+		   <!-- following event closes popup by users action -->
+		   <input type="button" value="NAZAJ V TRGOVINO" onclick="return mailocator.action.do('close')" />
+		 </div>
+	  </form>
+  
+	 </div><!--/end of my-popup-container -->
+  
+  </div><!--/end of my-popup-background-layer -->
+  
 			<!-- **Footer** -->
 			<footer id="footer">
 				<div class="container">
@@ -7576,7 +8013,7 @@
 			document.getElementById("demo").innerHTML = "Hello World";
 		}
 	</script>
-	<script>
+	<!-- <script>
 		function turn() {
 	console.log('turning the wheel!');
 	
@@ -7604,6 +8041,11 @@
 }
 
 document.addEventListener('click', turn);
+	</script> -->
+	<script>
+		function hideFunction() {
+    document.getElementById("hide").style.display = 'none';
+}
 	</script>
 
 	<script src="./assets/js/parallax.min.js"></script>
