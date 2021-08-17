@@ -130,6 +130,38 @@
 			background-color: #39599E;
 		}
 	</style>
+	<style>#livechat-compact-container {
+		height: 153px;
+		position: fixed;
+		right: 0;
+		top: 200px;
+		top: 30vh;
+		z-index: 10000;
+	  }
+	  .btn-chat a {
+		font-family: arial;
+		color: #fff;
+		text-decoration: none;
+		background: #b61329;
+		padding: 24px 20px 8px;
+		display: block;
+		font-weight: bold;
+		font-size: 14px;
+		box-shadow: 0 0 0 1px #b61329 inset;
+		border: 1px solid #144866;
+		border-radius: 2px;
+		-ms-transform: rotate(90deg) translate(0, -20px);
+		-webkit-transform: rotate(90deg) translate(0, -20px);
+		transform: rotate(90deg) translate(0, -20px);
+		position: relative;
+		right: -27px;
+		transition: background 0.2s, right 0.2s;
+	  }
+	  .btn-chat a:hover {
+		background: #47B6F5;
+		right: -20px;
+		transition: background 0.2s, right 0.2s;
+	  }</style>
 	<style>
 		.introduction-one {
 			margin-bottom: 6.25rem;
@@ -3013,7 +3045,7 @@
 
 																						</a></li>
 																					</div>
-																				<div class="web" style="  background-color: #961526; height:50%">
+																				<div class="web" style="  background-color: #961526; height:70%">
 																					<li >
 																						<a href="#"><span id="demo" 
 																								style="color:white;">Log
@@ -3038,6 +3070,14 @@
 																						  <img class="  lazyloaded" style="  margin: 5px; width: 36px;" data-src="/sites/toofaced/themes/toofaced_base/img/icons/svg/tiktok.svg" alt="Twitter" src="images/pinterest.png">
 																						</a>
 																					  </div>	
+																					  <li>
+																						
+																						<a href="#"
+																							target="_blank"
+																							rel="noopener">Copyright © 2020,
+																							| </a>
+																					
+																					  </li>
 																				</div>
 																				
 																				
@@ -5537,7 +5577,11 @@
 												</div>
 											</div>
 										</section>
-
+										<div class="btn-chat" id="livechat-compact-container" style="visibility: visible; opacity: 1;">
+											<div class="btn-holder">
+												<a onclick="parent.LC_API.open_chat_window();return false;" href="#" class="link">Live Chat</a>
+											</div>
+										</div>
 										<section
 											class="elementor-section elementor-top-section elementor-element elementor-element-344e8ac elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default jet-parallax-section"
 											data-id="344e8ac" data-element_type="section"
