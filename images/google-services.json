@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1017809490954",
+    "project_id": "newsapp-24a34",
+    "storage_bucket": "newsapp-24a34.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017809490954:android:1073f98974303787babbf3",
+        "android_client_info": {
+          "package_name": "mrblab.news_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1017809490954-irirlbb5hsg3kf5e7n4f8lhhofpafk07.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkhnrZbeA9vksUiKfBrLq0GAEOXy927gc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1017809490954-irirlbb5hsg3kf5e7n4f8lhhofpafk07.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
