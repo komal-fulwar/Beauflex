@@ -1,10 +1,10 @@
 {
-    "name": "Food Ninja",
-    "short_name": "FoodNinja",
+    "name": "Beauflex",
+    "short_name": "Beauflex",
     "start_url": "index.html",
     "display": "standalone",
-    "background_color": "#FFE9D2",
-    "theme_color": "#FFE1C4",
+    "background_color": "#bf0e0e",
+    "theme_color": "#ffff",
     "orientation": "portrait-primary",
     "icons": [
       {
@@ -20,12 +20,12 @@
       {
         "src": "/img/icons/whis.png",
         "type": "image/png",
-        "sizes": "128x128"
+        "sizes": "152x152"
       },
       {
         "src": "/img/icons/whis.png",
         "type": "image/png",
-        "sizes": "144x144"
+        "sizes": "152x152"
       },
       {
         "src": "/img/icons/whis.png",
