@@ -28,6 +28,16 @@
 		!function (e, a, t) { var n, r, o, i = a.createElement("canvas"), p = i.getContext && i.getContext("2d"); function s(e, t) { var a = String.fromCharCode; p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0); e = i.toDataURL(); return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL() } function c(e) { var t = a.createElement("script"); t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t) } for (o = Array("flag", "emoji"), t.supports = { everything: !0, everythingExceptFlag: !0 }, r = 0; r < o.length; r++)t.supports[o[r]] = function (e) { if (!p || !p.fillText) return !1; switch (p.textBaseline = "top", p.font = "600 32px Arial", e) { case "flag": return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]); case "emoji": return !s([55357, 56424, 8205, 55356, 57212], [55357, 56424, 8203, 55356, 57212]) }return !1 }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]); t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () { t.DOMReady = !0 }, t.supports.everything || (n = function () { t.readyCallback() }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () { "complete" === a.readyState && t.readyCallback() })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n.wpemoji))) }(window, document, window._wpemojiSettings);
 	</script>
 	<style>
+		.video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+	</style>
+	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
 		</style>
 		<style>
@@ -4915,7 +4925,7 @@ form.woocommerce-currency-switcher-form {
 			<div id="main">
 
 				<!-- ** Container ** -->
-				<div class="container">
+				<div class="">
 					<!-- Primary -->
 					<section id="primary" class="content-full-width">
 						<!-- #post-21155 -->
@@ -6133,6 +6143,11 @@ form.woocommerce-currency-switcher-form {
 												</div>
 											</div>
 										</section>
+										<div class="" style="width: 100%;object-fit: cover;">
+											<video aria-label="video" width="1128px" controlslist="nodownload" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+											  <source src="//cdn.shopify.com/s/files/1/0314/1143/7703/files/d-hp-tm-1440x898_01.mp4?v=18171484608909621107" type="video/mp4">
+											</video>
+										  </div>
 										<div class="btn-chat" id="livechat-compact-container" style="visibility: visible; opacity: 1;">
 											<div class="btn-holder">
 												<a onclick="parent.LC_API.open_chat_window();false;" href="#" class="link">Live Chat</a>
@@ -6161,6 +6176,7 @@ form.woocommerce-currency-switcher-form {
 												</form>
 											</div>
 										</section> -->
+										
 										<section
 											class="elementor-section elementor-top-section elementor-element elementor-element-2aa8003 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
 											data-id="2aa8003" data-element_type="section">
@@ -6468,8 +6484,9 @@ form.woocommerce-currency-switcher-form {
 												</div>
 											</div>
 										</div>
-										<section
-											class="elementor-section elementor-top-section elementor-element elementor-element-cf8b9c0 elementor-section-full_width elementor-section-content-middle elementor-section-height-default elementor-section-height-default qodef-elementor-content-no"
+										<section 
+											class=" elementor-section elementor-top-section elementor-element elementor-element-cf8b9c0 elementor-section-full_width elementor-section-content-middle elementor-section-height-default elementor-section-height-default qodef-elementor-content-no"
+											style="margin: 5%;"
 											data-id="cf8b9c0" data-element_type="section">
 											<div class="elementor-container elementor-column-gap-default">
 												<div class="elementor-row">
@@ -6774,6 +6791,13 @@ form.woocommerce-currency-switcher-form {
 																																														loading="lazy"
 																																														srcset="https://dtiva.wpengine.com/wp-content/uploads/2020/04/icon-cosmetic-kit1.png 124w, https://dtiva.wpengine.com/wp-content/uploads/2020/04/icon-cosmetic-kit1-100x56.png 100w"
 																																														sizes="(max-width: 124px) 100vw, 124px" /></a>
+																																														<h3
+																																													class="elementor-image-box-title">
+																																													<a
+																																														href="#">#
+																																														Hashtag
+																																														name</a>
+																																												</h3>
 																																											</figure>
 																																											<div
 																																												class="elementor-image-box-content">
@@ -7230,7 +7254,7 @@ form.woocommerce-currency-switcher-form {
 																									class="elementor-icon-box-description">
 																									<strong>Free
 																										Shipping</strong>
-																									World wide
+																									Pan India
 																								</p>
 																							</div>
 																						</div>
@@ -7309,7 +7333,7 @@ form.woocommerce-currency-switcher-form {
 																								</div>
 																								<p
 																									class="elementor-icon-box-description">
-																									<strong>24x7
+																									<strong>
 																										Extensive</strong>
 																									Customer Support
 																								</p>
@@ -7372,7 +7396,8 @@ form.woocommerce-currency-switcher-form {
 																</div>
 															</div>
 														</div> -->
-														<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-6e4e00a dt-col-lg-1b5 dt-col-lg-offset-for-1b5 dt-col-sm-offset-0 dt-col-sm-3"
+														<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-6e4e00a dt-col-lg-1b5 dt-col-lg-offset-for-1b5 dt-col-sm-offset-0 dt-col-sm-3 text-center"
+														style="margin: auto; display: block;"
 																		data-id="6e4e00a" data-element_type="column">
 																		<div
 																			class="elementor-column-wrap elementor-element-populated">
@@ -7385,24 +7410,25 @@ form.woocommerce-currency-switcher-form {
 																				</div>
 																				<div class="elementor-element elementor-element-60e224e elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
 																					data-id="60e224e"
+																					
 																					data-element_type="widget"
 																					data-widget_type="icon-list.default">
 																					<div
 																						class="elementor-widget-container">
-																						<div class="social-media-links"style="margin: auto; display: block;" >
+																						<div class="social-media-links" >
 																							<div class="social-media-links__header">	<h4 class="elementor-heading-title elementor-size-default"
 																								style="color:#f5ecce ;">
 																								Follow Us</h4></div>
 																							<a href="https://www.youtube.com/user/toofacedcosmetics/" target="_social" class="social-media-links__url">
-																							  <img class="  lazyloaded" style=" width: 46px;"  alt="Youtube" src="images/youtube.png">
+																							  <img class="  lazyloaded" style=" width: 46px; margin: 2px;"  alt="Youtube" src="images/youtube.png">
 																							</a>
 													
 																							<a href="https://www.facebook.com/toofaced/" target="_social" class="social-media-links__url">
-																							  <img class="  lazyloaded" style=" width: 46px;" data-src="/sites/toofaced/themes/toofaced_base/img/icons/svg/facebook.svg" alt="Facebook"src="images/instagram.png">
+																							  <img class="  lazyloaded" style=" width: 46px; margin: 2px;"  data-src="/sites/toofaced/themes/toofaced_base/img/icons/svg/facebook.svg" alt="Facebook"src="images/instagram.png">
 																							</a>
 																							
 																							<a href="https://www.tiktok.com/@toofaced" target="_social" class="social-media-links__url">
-																							  <img class="  lazyloaded" style=" width: 46px;" data-src="/sites/toofaced/themes/toofaced_base/img/icons/svg/tiktok.svg" alt="Twitter" src="images/pinterest.png">
+																							  <img class="  lazyloaded" style=" width: 46px; margin: 2px;"  data-src="/sites/toofaced/themes/toofaced_base/img/icons/svg/tiktok.svg" alt="Twitter" src="images/pinterest.png">
 																							</a>
 																						  </div>
 																					</div>
